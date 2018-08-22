@@ -1,0 +1,38 @@
+{
+    "name": "tomatotech/tomato_pusher_php",
+    "version":"1.0.0",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Wayne Wen",
+            "email": "wen@tomatotravel.com.au"
+        }
+    ],
+    "require": {
+        "illuminate/queue": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x",
+        "illuminate/contracts": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x",
+        "illuminate/support": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x",
+        "predis/predis":"~1.0",
+        "lcobucci/jwt": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tomato\\Pusher\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tomato\\Pusher\\ServiceProvider"
+            ],
+            "aliases": {
+                "Debugbar": "Tomato\\Pusher\\Facade"
+            }
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "echo \"Please remember to set value for these two keys: 'services.tomato_pusher.app_id' and 'services.tomato_pusher.app_sercret'\""
+        ]
+    }
+}
