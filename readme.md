@@ -21,15 +21,6 @@ Require this package with composer. You need to add our own repositories into yo
     ],
 ```
 
-or You can download the repository in you pc:
-```text
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/var/www/tomato_pusher_php"
-        }
-    ],
-```
 Then
 
 ```shell

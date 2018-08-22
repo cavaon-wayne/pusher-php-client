@@ -1,6 +1,5 @@
 {
     "name": "tomatotech/tomato_pusher_php",
-    "version":"1.0.0",
     "type": "library",
     "authors": [
         {
@@ -26,7 +25,8 @@
                 "Tomato\\Pusher\\ServiceProvider"
             ],
             "aliases": {
-                "Debugbar": "Tomato\\Pusher\\Facade"
+                "TomatoPusher": "Tomato\\Pusher\\Facade",
+                "TomatoEvent": "Tomato\\Pusher\\Events\\Event"
             }
         }
     },
