@@ -2,27 +2,6 @@
 
 ## Installation
 
-Require this package with composer. You need to add our own repositories into your project's `composer.json` file
-
-```text
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "tomatotech/tomato_pusher_php",
-                "version": "1.0.0",
-                "source": {
-                    "url": "https://WayneWen_Tomato@bitbucket.org/tomatoteches/tomato-pusher-php.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        }
-    ],
-```
-
-Then
-
 ```shell
 composer require tomatotech/tomato_pusher_php
 ```

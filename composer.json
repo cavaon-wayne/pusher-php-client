@@ -1,10 +1,10 @@
 {
-    "name": "tomatotech/tomato_pusher_php",
+    "name": "tomato-technologies/tomato-pusher-php",
     "type": "library",
     "authors": [
         {
             "name": "Wayne Wen",
-            "email": "wen@tomatotravel.com.au"
+            "email": "wayne.w@tomatotechnologies.com.au"
         }
     ],
     "require": {
