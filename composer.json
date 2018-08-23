@@ -1,6 +1,9 @@
 {
     "name": "tomato-technologies/tomato-pusher-php",
     "type": "library",
+    "description": "Tomato pusher for Laravel project",
+    "keywords": ["tomato technologies"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Wayne Wen",
@@ -32,7 +35,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "echo \"Please remember to set value for these two keys: 'services.tomato_pusher.app_id' and 'services.tomato_pusher.app_sercret'\""
+            "echo \"Please remember to set value for these two keys: 'services.tomato_pusher.app_id' and 'services.tomato_pusher.app_secret'\""
         ]
     }
 }
