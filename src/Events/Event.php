@@ -3,9 +3,9 @@
 namespace Tomato\Pusher\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 
-class Event implements ShouldBroadcast
+class Event implements ShouldBroadcastNow
 {
     use SerializesModels;
 
