@@ -1,6 +1,6 @@
 <?php
 
-namespace Tomato\Pusher;
+namespace Cavaon\Pusher;
 
 use Exception;
 

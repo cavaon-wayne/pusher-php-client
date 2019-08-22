@@ -1,6 +1,6 @@
 <?php
 
-namespace Tomato\Pusher;
+namespace Cavaon\Pusher;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {

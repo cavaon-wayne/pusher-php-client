@@ -1,41 +1,41 @@
 {
-    "name": "tomato-technologies/tomato-pusher-php",
+    "name": "cavaon-wayne/pusher-php-client",
     "type": "library",
-    "description": "Tomato pusher for Laravel project",
-    "keywords": ["tomato technologies"],
+    "description": "Cavaon pusher for Laravel project",
+    "keywords": ["cavaon"],
     "license": "MIT",
     "authors": [
         {
             "name": "Wayne Wen",
-            "email": "wayne.w@tomatotechnologies.com.au"
+            "email": "wayne.w@cavaon.com"
         }
     ],
     "require": {
         "illuminate/queue": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x",
         "illuminate/contracts": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x",
         "illuminate/support": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x",
-        "predis/predis":"~1.0",
+        "pusher/pusher-php-server": "2.6.4",
         "lcobucci/jwt": "^3.2"
     },
     "autoload": {
         "psr-4": {
-            "Tomato\\Pusher\\": "src/"
+            "Cavaon\\Pusher\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Tomato\\Pusher\\ServiceProvider"
+                "Cavaon\\Pusher\\ServiceProvider"
             ],
             "aliases": {
-                "TomatoPusher": "Tomato\\Pusher\\Facade",
-                "TomatoEvent": "Tomato\\Pusher\\Events\\Event"
+                "CavaonPusher": "Cavaon\\Pusher\\Facade",
+                "CavaonEvent": "Cavaon\\Pusher\\Events\\Event"
             }
         }
     },
     "scripts": {
         "post-install-cmd": [
-            "echo \"Please remember to set value for these two keys: 'services.tomato_pusher.app_id' and 'services.tomato_pusher.app_secret'\""
+            "echo \"Please remember to set value for these self-hosted pusher server's host and port two keys: 'broadcasting.connections.pusher.options.host' and 'broadcasting.connections.pusher.options.port'\""
         ]
     }
 }

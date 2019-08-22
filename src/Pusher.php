@@ -1,6 +1,6 @@
 <?php
 
-namespace Tomato\Pusher;
+namespace Cavaon\Pusher;
 
 use Lcobucci\JWT\Builder;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
@@ -31,16 +31,21 @@ class Pusher
      */
     protected function getAppSecret()
     {
-        $appId = $this->app['config']->get('services.tomato_pusher.app_id');
-        $appSecret = $this->app['config']->get('services.tomato_pusher.app_secret');
+        $appId = $this->app['config']->get('broadcasting.connections.pusher.app_id');
+        $appSecret = $this->app['config']->get('broadcasting.connections.pusher.secret');
         if (empty($appId) || empty($appSecret)) {
-            throw new PusherException("Please make sure you have set app id and its secret for these two config keys:'services.tomato_pusher.app_id' and 'services.tomato_pusher.app_secret' ");
+            throw new PusherException("Please make sure you have set app id and its secret for these two config keys:'broadcasting.connections.pusher.app_id' and 'broadcasting.connections.pusher.secret' ");
         }
         return [$appId, $appSecret];
     }
 
     public function getAppId(){
-        return $this->app['config']->get('services.tomato_pusher.app_id');
+        return $this->app['config']->get('broadcasting.connections.pusher.app_id');
+    }
+
+    public function getHostURL(){
+        $port=config('broadcasting.connections.pusher.options.port');
+        return config('broadcasting.connections.pusher.options.host').($port?":".$port:"").'/'.config('broadcasting.connections.pusher.app_id');
     }
 
     /**

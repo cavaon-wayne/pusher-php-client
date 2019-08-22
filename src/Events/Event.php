@@ -1,6 +1,6 @@
 <?php
 
-namespace Tomato\Pusher\Events;
+namespace Cavaon\Pusher\Events;
 
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
@@ -17,7 +17,7 @@ class Event implements ShouldBroadcastNow
      * Event constructor.
      * @param string|array $channel
      * @param string $event
-     * @param array $data
+     * @param array|mixed $data
      */
     public function __construct($channel, $event, $data = [])
     {
@@ -31,20 +31,7 @@ class Event implements ShouldBroadcastNow
         if (is_string($channel)) {
             $channel = [$channel];
         }
-        $result = [];
-        if (is_array($channel)) {
-            $appName = app("config")->get("services.tomato_pusher.app_id", "");
-            if (!empty($appName)) {
-                $appName = "@" . $appName;
-            }
-            foreach ($channel as $channelStr){
-                if(!preg_match("/@/",$channelStr)){
-                    $channelStr=$channelStr.$appName;
-                }
-                $result[]=$channelStr;
-            }
-        }
-        $this->channel = $result;
+        $this->channel = $channel;
     }
 
     /**

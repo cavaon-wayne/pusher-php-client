@@ -1,6 +1,6 @@
 <?php
 
-namespace Tomato\Pusher;
+namespace Cavaon\Pusher;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -22,7 +22,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             return new Pusher($this->app);
         });
 
-        $this->app->alias(Pusher::class, 'tomato.pusher');
+        $this->app->alias(Pusher::class, 'cavaon.pusher');
     }
 
     /**
@@ -51,6 +51,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function provides()
     {
-        return ['tomato.pusher', Pusher::class];
+        return ['cavaon.pusher', Pusher::class];
     }
 }
